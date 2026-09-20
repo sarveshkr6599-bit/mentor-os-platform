@@ -1,6 +1,14 @@
+export type UserRole =
+  | "student"
+  | "mentor"
+  | "admin";
+
 export interface User {
   id: string;
   name: string;
   email: string;
-  role: "student" | "mentor" | "admin";
+  role: UserRole;
+
+  createdAt: Date;
+  updatedAt: Date;
 }

@@ -1,0 +1,948 @@
+.page {
+  min-height: 100vh;
+  padding: 32px 42px 44px;
+  background: #f7f8fc;
+  color: #172033;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.eyebrow,
+.cardEyebrow {
+  margin: 0 0 9px;
+  color: #6366f1;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(28px, 2.2vw, 34px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: #7b8497;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.headerActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.periodSelect,
+.exportButton {
+  min-height: 44px;
+  border: 1px solid #e3e7ef;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 0 15px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.periodSelect:focus {
+  border-color: #6366f1;
+}
+
+.exportButton {
+  border: 0;
+  background: #111827;
+  color: #ffffff;
+  padding: 0 19px;
+  transition: all 0.2s ease;
+}
+
+.exportButton:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.metricCard {
+  min-height: 140px;
+  padding: 21px;
+  border: 1px solid #e8ebf2;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(15, 23, 42, 0.07);
+}
+
+.metricTop,
+.metricBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metricTop > span {
+  color: #737c8f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.metricIcon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #f0f2ff;
+  font-size: 17px;
+}
+
+.metricBottom {
+  justify-content: flex-start;
+  gap: 13px;
+  margin-top: 19px;
+}
+
+.metricBottom strong {
+  font-size: 29px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.positive,
+.negative {
+  padding: 5px 9px;
+  border-radius: 7px;
+  background: #ecfdf3;
+  color: #039855;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.negative {
+  background: #fef3f2;
+  color: #d92d20;
+}
+
+.metricCard small {
+  display: block;
+  margin-top: 10px;
+  color: #98a1b2;
+  font-size: 11px;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.mainGrid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(320px, 0.85fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.chartCard,
+.overviewCard,
+.tableCard,
+.insightsCard {
+  border: 1px solid #e8ebf2;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+}
+
+.chartCard {
+  min-width: 0;
+  padding: 23px;
+}
+
+.overviewCard {
+  min-width: 0;
+  padding: 23px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.cardHeader h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.cardHeader > div > span {
+  display: block;
+  margin-top: 7px;
+  color: #8a93a5;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   LEGEND
+   ========================================================= */
+
+.legend {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.legend button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  padding: 8px 10px;
+  color: #8a93a5;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.legend button:hover,
+.activeLegend {
+  background: #f5f6ff !important;
+  color: #4f46e5 !important;
+}
+
+.legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6366f1;
+}
+
+/* =========================================================
+   CHART
+   ========================================================= */
+
+.chart {
+  display: flex;
+  height: 310px;
+  margin-top: 29px;
+}
+
+.yAxis {
+  width: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 9px 31px 0;
+  color: #a0a8b7;
+  font-size: 10px;
+  text-align: right;
+}
+
+.chartArea {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.gridLines {
+  position: absolute;
+  inset: 0 0 31px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gridLines span {
+  width: 100%;
+  height: 1px;
+  background: #eef0f5;
+}
+
+.bars {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  gap: 13px;
+}
+
+.barColumn {
+  position: relative;
+  flex: 1;
+  max-width: 80px;
+  min-width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barValue {
+  height: 21px;
+  color: #697386;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.barTrack {
+  position: relative;
+  width: 40px;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 8px 8px 4px 4px;
+  background: #f0f2f7;
+}
+
+.bar {
+  width: 100%;
+  min-height: 4px;
+  border-radius: 8px 8px 4px 4px;
+  background: linear-gradient(180deg, #818cf8, #4f46e5);
+  transition: height 0.25s ease;
+}
+
+.bar:hover {
+  opacity: 0.85;
+}
+
+.barColumn > span {
+  height: 31px;
+  padding-top: 10px;
+  color: #8d96a7;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.overviewList {
+  margin-top: 22px;
+}
+
+.overviewItem {
+  padding: 19px 0;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.overviewItem:last-child {
+  border-bottom: 0;
+}
+
+.overviewItem > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.overviewItem span {
+  color: #747e91;
+  font-size: 12px;
+}
+
+.overviewItem strong {
+  color: #1f2937;
+  font-size: 14px;
+}
+
+.circularProgress {
+  margin-top: 13px;
+}
+
+.circularProgress > div {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: conic-gradient(
+    #6366f1 var(--progress),
+    #edf0f6 0
+  );
+  color: #30384a;
+  font-size: 13px;
+  font-weight: 800;
+  position: relative;
+  isolation: isolate;
+}
+
+.circularProgress > div::after {
+  content: "";
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.circularProgress > div::before {
+  content: "78%";
+  position: absolute;
+  z-index: 1;
+  color: #30384a;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.circularProgress > div {
+  color: transparent;
+}
+
+.miniProgress {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #eef1f6;
+}
+
+.miniProgress div {
+  height: 100%;
+  border-radius: inherit;
+  background: #6366f1;
+}
+
+/* =========================================================
+   BOTTOM GRID
+   ========================================================= */
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(320px, 0.8fr);
+  gap: 18px;
+}
+
+.tableCard,
+.insightsCard {
+  padding: 23px;
+  min-width: 0;
+}
+
+/* =========================================================
+   COURSE TABLE
+   ========================================================= */
+
+.viewAll {
+  border: 0;
+  background: transparent;
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+.courseList {
+  margin-top: 19px;
+}
+
+.courseRow {
+  display: grid;
+  grid-template-columns:
+    36px
+    minmax(170px, 1fr)
+    minmax(150px, 0.8fr)
+    65px;
+  align-items: center;
+  gap: 13px;
+  min-height: 78px;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.courseRow:last-child {
+  border-bottom: 0;
+}
+
+.rank {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #f3f4ff;
+  color: #5b55d6;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.courseName strong,
+.courseName span {
+  display: block;
+}
+
+.courseName strong {
+  color: #293244;
+  font-size: 12px;
+}
+
+.courseName span {
+  margin-top: 5px;
+  color: #99a1b0;
+  font-size: 10px;
+}
+
+.courseCompletion > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.courseCompletion span,
+.score span {
+  color: #98a0af;
+  font-size: 10px;
+}
+
+.courseCompletion strong {
+  color: #4b5565;
+  font-size: 11px;
+}
+
+.score {
+  text-align: right;
+}
+
+.score span,
+.score strong {
+  display: block;
+}
+
+.score strong {
+  margin-top: 5px;
+  color: #4f46e5;
+  font-size: 13px;
+}
+
+/* =========================================================
+   INSIGHTS
+   ========================================================= */
+
+.insightList {
+  margin-top: 18px;
+}
+
+.insight {
+  display: flex;
+  gap: 13px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.insight:last-child {
+  border-bottom: 0;
+}
+
+.insightIcon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #f0f2ff;
+  color: #5b55d6;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.insight strong {
+  color: #303849;
+  font-size: 12px;
+}
+
+.insight p {
+  margin: 5px 0 0;
+  color: #8992a3;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FOOTER BANNER
+   ========================================================= */
+
+.footerBanner {
+  margin-top: 18px;
+  padding: 18px 21px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid #e6e8f5;
+  border-radius: 14px;
+  background: #f8f8ff;
+}
+
+.footerBanner > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.bannerIcon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #e9e9ff;
+  color: #4f46e5;
+  font-weight: 800;
+}
+
+.footerBanner strong {
+  display: block;
+  color: #303849;
+  font-size: 12px;
+}
+
+.footerBanner p {
+  margin: 4px 0 0;
+  color: #8b94a5;
+  font-size: 10px;
+}
+
+.footerBanner > span {
+  color: #8b94a5;
+  font-size: 10px;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1500px) {
+  .page {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .metricCard {
+    min-height: 150px;
+  }
+
+  .metricBottom strong {
+    font-size: 31px;
+  }
+
+  .chart {
+    height: 340px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .page {
+    padding: 28px;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mainGrid,
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart {
+    height: 300px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .page {
+    padding: 22px 20px 35px;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .headerActions {
+    width: 100%;
+  }
+
+  .periodSelect,
+  .exportButton {
+    flex: 1;
+  }
+
+  .chartCard,
+  .overviewCard,
+  .tableCard,
+  .insightsCard {
+    padding: 19px;
+  }
+
+  .courseRow {
+    grid-template-columns:
+      34px
+      minmax(150px, 1fr)
+      minmax(130px, 0.8fr)
+      60px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+  .page {
+    padding: 16px;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .headerActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .periodSelect,
+  .exportButton {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .metricCard {
+    min-height: 125px;
+    padding: 18px;
+  }
+
+  .metricBottom {
+    margin-top: 16px;
+  }
+
+  .metricBottom strong {
+    font-size: 26px;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+  }
+
+  .legend {
+    width: 100%;
+  }
+
+  .legend button {
+    padding: 7px 8px;
+  }
+
+  .chart {
+    height: 250px;
+    margin-top: 22px;
+  }
+
+  .yAxis {
+    width: 34px;
+    padding-right: 6px;
+    font-size: 9px;
+  }
+
+  .bars {
+    gap: 7px;
+  }
+
+  .barTrack {
+    width: 30px;
+  }
+
+  .barColumn {
+    min-width: 20px;
+  }
+
+  .barColumn > span {
+    font-size: 9px;
+  }
+
+  .overviewItem {
+    padding: 16px 0;
+  }
+
+  .courseRow {
+    grid-template-columns: 32px 1fr;
+    padding: 15px 0;
+    gap: 10px;
+  }
+
+  .courseCompletion,
+  .score {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .courseCompletion {
+    width: 100%;
+  }
+
+  .score {
+    margin-top: -3px;
+  }
+
+  .footerBanner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .page {
+    padding: 12px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .chartCard,
+  .overviewCard,
+  .tableCard,
+  .insightsCard {
+    padding: 16px;
+  }
+
+  .metricCard {
+    min-height: 115px;
+    padding: 16px;
+  }
+
+  .metricIcon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .metricBottom strong {
+    font-size: 23px;
+  }
+
+  .chart {
+    height: 220px;
+  }
+
+  .barTrack {
+    width: 24px;
+  }
+
+  .barColumn > span {
+    font-size: 8px;
+  }
+
+  .overviewItem span {
+    font-size: 11px;
+  }
+
+  .overviewItem strong {
+    font-size: 13px;
+  }
+
+  .footerBanner > div {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .page {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .cardHeader h2 {
+    font-size: 16px;
+  }
+
+  .metricBottom strong {
+    font-size: 21px;
+  }
+
+  .chart {
+    height: 205px;
+  }
+
+  .barTrack {
+    width: 20px;
+  }
+}
