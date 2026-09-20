@@ -1,0 +1,159 @@
+/* =========================================================
+   RESPONSIVE FONT & UI SCALING - MentorOS
+   ========================================================= */
+
+.dashboard {
+  font-size: clamp(14px, 0.25vw + 13px, 17px);
+}
+
+/* Main headings */
+.dashboard h1 {
+  font-size: clamp(24px, 2vw, 32px);
+}
+
+.dashboard h2 {
+  font-size: clamp(17px, 1.2vw, 21px);
+}
+
+.dashboard h3 {
+  font-size: clamp(15px, 1vw, 18px);
+}
+
+/* Body text */
+.dashboard p {
+  font-size: clamp(12px, 0.35vw + 10px, 15px);
+}
+
+/* Buttons and controls */
+.dashboard button,
+.dashboard input,
+.dashboard select {
+  font-size: clamp(11px, 0.3vw + 9px, 14px);
+}
+
+/* Important dashboard numbers */
+.statContent strong {
+  font-size: clamp(23px, 1.8vw, 30px);
+}
+
+.progressCircle strong {
+  font-size: clamp(25px, 2vw, 32px);
+}
+
+/* Card headings */
+.cardHeader h2 {
+  font-size: clamp(17px, 1.1vw, 20px);
+}
+
+/* Stat labels */
+.statContent > span {
+  font-size: clamp(11px, 0.25vw + 9px, 13px);
+}
+
+.statContent small {
+  font-size: clamp(9px, 0.2vw + 8px, 11px);
+}
+
+/* Table */
+.assignmentTable {
+  font-size: clamp(10px, 0.25vw + 9px, 13px);
+}
+
+.assignmentTable th,
+.assignmentTable td {
+  font-size: clamp(10px, 0.25vw + 9px, 13px);
+}
+
+/* Deadline text */
+.deadlineInfo strong {
+  font-size: clamp(11px, 0.3vw + 9px, 14px);
+}
+
+.deadlineInfo span {
+  font-size: clamp(9px, 0.25vw + 8px, 12px);
+}
+
+/* AI section */
+.aiInsight strong {
+  font-size: clamp(12px, 0.3vw + 10px, 15px);
+}
+
+.aiInsight p {
+  font-size: clamp(10px, 0.25vw + 9px, 12px);
+}
+
+/* Quick actions */
+.actionButton {
+  font-size: clamp(10px, 0.3vw + 9px, 13px);
+}
+
+/* Backend status */
+.backendStatus {
+  font-size: clamp(9px, 0.25vw + 8px, 12px);
+}
+
+.backendStatus strong {
+  font-size: clamp(10px, 0.25vw + 9px, 13px);
+}
+
+/* Motivation */
+.motivation h2 {
+  font-size: clamp(15px, 1vw, 19px);
+}
+
+.motivation p {
+  font-size: clamp(10px, 0.25vw + 9px, 12px);
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  .dashboard {
+    padding-left: clamp(22px, 2.2vw, 42px);
+    padding-right: clamp(22px, 2.2vw, 42px);
+  }
+
+  .statsGrid {
+    gap: clamp(15px, 1vw, 22px);
+  }
+
+  .statCard {
+    padding: clamp(18px, 1.2vw, 24px);
+  }
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .dashboard {
+    padding: 20px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .dashboard {
+    padding: 16px;
+  }
+
+  .welcome h1 {
+    font-size: clamp(22px, 4vw, 27px);
+  }
+
+  .statContent strong {
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 12px;
+  }
+
+  .cardHeader h2 {
+    font-size: 16px;
+  }
+
+  .statContent strong {
+    font-size: 23px;
+  }
+}
